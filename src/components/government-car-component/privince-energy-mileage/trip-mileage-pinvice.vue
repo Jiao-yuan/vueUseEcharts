@@ -1,0 +1,156 @@
+<template>
+  <div :id="id"></div>
+</template>
+<script>
+import echarts from "echarts";
+export default {
+  data() {
+    return {
+      id: "trip-mileage-pinvice",
+      timer: null
+    };
+  },
+  mounted() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.chart.clear();
+      this.echartsintit();
+    }, 5000);
+    this.echartsintit();
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
+  methods: {
+    echartsintit() {
+      let dom = document.getElementById(this.id);
+      dom.style.height = 270 + "px";
+      this.chart = echarts.init(dom);
+      let option = {
+        tooltip: {
+          trigger: "axis",
+          show: true
+        },
+        radar: {
+          indicator: [
+            {
+              name: "消防",
+              max: 100
+            },
+            {
+              name: "劳动",
+              max: 100
+            },
+            {
+              name: "非法",
+              max: 100
+            },
+            {
+              name: "环境",
+              max: 100
+            },
+            {
+              name: "安全",
+              max: 100
+            },
+            {
+              name: "过度",
+              max: 100
+            }
+          ],
+          radius: "70%",
+          center: ["43%", "50%"],
+          shape: "polygon",
+          splitNumber: 4,
+          name: {
+            textStyle: {
+              color: "#36F5FF",
+              fontSize: 16
+            }
+          },
+          splitArea: {
+            areaStyle: {
+              opacity: 0
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: [
+                "#2253DA",
+                "#2253DA",
+                "#2253DA",
+                "#2253DA",
+                "#2253DA",
+                "#2253DA"
+              ].reverse(),
+              width: 1
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#2253DA"
+            }
+          }
+        },
+        series: [{
+          name: "2018",
+          type: "radar",
+          tooltip: {
+            trigger: "item"
+          },
+          data: [
+            {
+              value: [100, 90, 80, 66, 90, 70]
+            }
+          ],
+          symbol: "circle",
+          symbolSize: 6,
+          itemStyle: {
+            normal: {
+              color: "#FFFFFF",
+              borderColor: "#E34242",
+              borderWidth: 1
+            }
+          },
+          areaStyle: {
+            normal: {
+              color: {
+                type: "linear",
+                x: 1,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "rgba(108, 0, 0, 0)" // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.5,
+                    color: "rgba(227, 66, 66, 0.38)" // 0% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "rgba(227, 66, 66, 0.38)" // 100% 处的颜色
+                  }
+                ],
+                global: false // 缺省为 false
+              }
+            }
+          },
+          lineStyle: {
+            normal: {
+              color: "#E34242",
+              width: 3
+            }
+          }
+        },
+       ]
+      };
+      this.chart.setOption(option);
+    }
+  }
+};
+</script>
+<style lang="scss">
+</style>

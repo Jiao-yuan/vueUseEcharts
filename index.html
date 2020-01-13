@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>区域热图</title>
+    <!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" /> -->
+    <script src="http://api.map.baidu.com/getscript?v=2.0&ak=swFFfRmPdHLjr2XoKUSrLUKzG8dQKj2T"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <script src="https://webapi.amap.com/maps?key=c8c078c1426b4a512c4e2cc79cde3851&v=1.4.15&plugin=AMap.ControlBar"></script>
+    <script src="https://webapi.amap.com/loca?key=c8c078c1426b4a512c4e2cc79cde3851&v=1.3.0"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=c8c078c1426b4a512c4e2cc79cde3851&plugin=Map3D,AMap.DistrictLayer,AMap.Scale,AMap.ToolBar"></script>
+    <script src="https://a.amap.com/Loca/static/mock/bj_heat_grid.js"></script>
+    <script src="https://a.amap.com/Loca/static/manual/example/script/demo.js"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+    <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script src="https://a.amap.com/Loca/static/mock/heatmapData.js"></script>
+    <style>
+        .anchorBL {
+            display: none !important;
+        }
+        
+        .anchorTR {
+            display: none !important;
+        }
+        
+        .BMap_cpyCtrl {
+            display: none !important;
+        }
+        
+        .el-select-dropdown {
+            border: none !important;
+            background: rgba(32, 49, 71, 0.9) !important;
+        }
+        
+        .el-select-dropdown__item {
+            color: #3fd9ff !important;
+        }
+        
+        .el-select-dropdown__item.hover,
+        .el-select-dropdown__item:hover {
+            background: rgba(20, 117, 232, 1) !important;
+            color: #ffffff !important;
+        }
+        
+        .popper__arrow::after {
+            border-bottom-color: rgba(32, 49, 71, 0.9) !important;
+            top: 0 !important;
+        }
+    </style>
+    <script>
+        // setRem();
+        // window.addEventListener("resize", setRem);
+
+        // function setRem() {
+        //     var html = document.querySelector("html");
+        //     var width = html.getBoundingClientRect().width;
+        //     html.style.fontSize = width / 1920 * 100 + "px";
+        // }
+    </script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>
