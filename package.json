@@ -11,7 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
     "cxlt-vue2-toastr": "^1.1.0",
